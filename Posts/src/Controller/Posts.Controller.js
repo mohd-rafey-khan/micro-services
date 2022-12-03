@@ -1,3 +1,7 @@
+
+const { randomBytes } = require('crypto');
+const Posts = {};
+
 /**
  * @param {*} req 
  * @param {*} res 
@@ -7,7 +11,7 @@
  */
 
 const getAllPosts = async (req,res) => {
-    res.send({"success": "Ok"});
+    res.send(Posts);
 }
 /**
  * @param {*} req 
@@ -17,7 +21,12 @@ const getAllPosts = async (req,res) => {
  * Controller to handle Post Request By Adding Posts
  */ 
 const addPosts = async (req,res) => {
-    res.send({ "message" : "Posts Created" })
+    const id = randomBytes(4).toString('hex');
+    const { title } = req.body;
+    Posts[id] = {
+        id, title
+    }
+    res.send(Posts[id]);
 }
 
 /**

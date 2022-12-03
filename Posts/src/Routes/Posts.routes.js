@@ -15,8 +15,8 @@ const PostsController = require("../Controller/Posts.Controller");
  * Redirect all routes to its functionalities 
  */
 
-router.get("/get-all",PostsController.getAllPosts);
-router.post("/add",PostsController.addPosts);
+router.get("/",PostsController.getAllPosts);
+router.post("/",PostsController.addPosts);
 
 /**
  * {@inheritdoc}

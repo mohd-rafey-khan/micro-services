@@ -1,8 +1,30 @@
-const express = require("express");
-const app = express();
+/**
+ * {@inheritdoc}
+ * Require Core modules
+ */
 
-app.get('/',(req,res)=>{
-    res.send("Ok");
-});
-
-app.listen(4001,(req,res)=>{ console.log("Comment server is started at port 4000"); });
+ const express = require("express");
+ const app = express();
+ const bodyParser = require('body-parser');
+ 
+ /**
+  * {@inheritdoc}
+  * Config all requirements
+  */
+ 
+ app.use(bodyParser.urlencoded({extended: true}));
+ app.use(bodyParser.json());
+ 
+ /**
+  * {@inheritdoc}
+  * Use Posts Routes
+  */
+ const CommentsRoute = require("./src/Routes/Comments.routes");
+ app.use("/api/:id/comments",CommentsRoute);
+ 
+ 
+ /**
+  * {@inheritdoc}
+  * Server Listen Configs
+  */
+ app.listen(4001,()=>{ console.log("Comments server is started at port 4001"); });
