@@ -34,9 +34,20 @@ const addComments = async (req,res) => {
 
 /**
  * {@inheritdoc}
+ * Handle Event
+ */
+const handleEvents = async (req,res)=>{
+    console.log(req.body);
+    res.send({});
+}
+
+
+/**
+ * {@inheritdoc}
  * exports all controller
  */
 module.exports = {
     getAllComments,
     addComments,
+    handleEvents,
 }

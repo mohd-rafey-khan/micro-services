@@ -15,8 +15,15 @@ const PostsController = require("../Controller/Posts.Controller");
  * Redirect all routes to its functionalities 
  */
 
-router.get("/",PostsController.getAllPosts);
-router.post("/",PostsController.addPosts);
+router.get("/api/posts",PostsController.getAllPosts);
+router.post("/api/posts",PostsController.addPosts);
+
+/**
+ * {@inheritdoc}
+ * Handle event bus
+*/
+router.post("/api/events",PostsController.handleEvents);
+
 
 /**
  * {@inheritdoc}

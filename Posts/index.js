@@ -20,7 +20,7 @@ app.use(bodyParser.json());
  * Use Posts Routes
  */
 const PostsRoute = require("./src/Routes/Posts.routes");
-app.use("/api/posts",PostsRoute);
+app.use("/",PostsRoute);
 
 
 /**

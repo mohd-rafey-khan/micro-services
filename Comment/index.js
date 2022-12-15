@@ -20,7 +20,7 @@
   * Use Posts Routes
   */
  const CommentsRoute = require("./src/Routes/Comments.routes");
- app.use("/api/:id/comments",CommentsRoute);
+ app.use("/",CommentsRoute);
  
  
  /**

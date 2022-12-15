@@ -15,8 +15,14 @@
   * Redirect all routes to its functionalities 
   */
  
- router.get("/",CommentsController.getAllComments);
- router.post("/",CommentsController.addComments);
+ router.get("/api/:id/comments",CommentsController.getAllComments);
+ router.post("/api/:id/comments",CommentsController.addComments);
+
+ /**
+  * {@inheritdoc}
+  * Handle Events
+  */
+ router.post("/api/events",CommentsController.handleEvents);
  
  /**
   * {@inheritdoc}

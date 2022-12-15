@@ -31,9 +31,19 @@ const addPosts = async (req,res) => {
 
 /**
  * {@inheritdoc}
+ * Handle Events
+ */
+const handleEvents = async (req,res)=>{
+    console.log(req.body);
+    res.send({});
+}
+
+/**
+ * {@inheritdoc}
  * exports all controller
  */
 module.exports = {
     getAllPosts,
     addPosts,
+    handleEvents,
 }
